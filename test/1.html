@@ -44,6 +44,12 @@
         .content .display {
             display: block;
         }
+        
+        .box2 {
+            width: 800px;
+            height: 1024px;
+            background: gray;
+        }
     </style>
 
     <script src="./../js/jquery-1.8.3.js"></script>
@@ -65,11 +71,15 @@
         </ul>
     </div>
     <script>
-        $(".title li").click(function() {
+        $(".title li").on("mouseover", function() {
             $(this).addClass("display").siblings().removeClass("display");
             $(".content li").eq($(this).index()).addClass("display").siblings().removeClass("display");
         });
     </script>
+    <div class="box2">
+
+    </div>
+    <p id="p1">i here</p>
 </body>
 
 </html>

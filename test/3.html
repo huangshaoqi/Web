@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            box-sizing: border-box;
+        }
+        
+        .page {
+            width: 960px;
+            height: 100%;
+            margin: 0 auto;
+            box-sizing: content-box;
+        }
+        
+        .header {
+            width: 100%;
+            height: 150px;
+        }
+        
+        .logo {
+            width: 100%;
+            height: 100px;
+            background-color: darkorange;
+        }
+        
+        .nav ul {
+            width: 100%;
+            height: 50px;
+            list-style-type: none;
+            box-sizing: border-box;
+            background-color: darkgray;
+        }
+        
+        .nav ul li {
+            float: left;
+            width: 100px;
+            border: 1px solid rgb(138, 33, 236);
+            line-height: 48px;
+            text-align: center;
+            cursor: pointer;
+            background-color: olive;
+        }
+        
+        .content {
+            width: 750px;
+            height: 600px;
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: rgb(129, 138, 155);
+            float: left;
+        }
+        
+        .sidebar {
+            width: 210px;
+            height: 600px;
+            display: inline-block;
+            box-sizing: border-box;
+            background-color: cornflowerblue;
+            float: left;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(26, 170, 170);
+        }
+        
+        .clear:before,
+        .clear:after {
+            content: " ";
+            display: block;
+        }
+        
+        .clear:after {
+            clear: both;
+        }
+        
+        .clear {
+            zoom: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo"></div>
+
+            <div class="nav">
+                <ul>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                    <li>d</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content clear">
+            <div class="artcle"></div>
+        </div>
+        <div class="sidebar clear">
+
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
