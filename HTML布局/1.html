@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .box {
+            height: 400px;
+            width: 400px;
+            border: 1px solid #c0c0c0;
+        }
+        
+        .title {
+            overflow: hidden;
+        }
+        
+        .title li {
+            float: left;
+            text-align: center;
+            width: 100px;
+            line-height: 50px;
+            border: 1px solid #c0c0c0;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        
+        .title .display {
+            background-color: red;
+        }
+        
+        .content li {
+            display: none;
+        }
+        
+        .content .display {
+            display: block;
+        }
+        
+        .box2 {
+            width: 800px;
+            height: 1024px;
+            background: gray;
+        }
+    </style>
+
+    <script src="./../js/jquery-1.8.3.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="title">
+            <li class="display">新闻</li>
+            <li>图片</li>
+            <li>联系方式</li>
+            <li>问题反馈</li>
+        </ul>
+        <ul class="content">
+            <li class="display">新闻新闻</li>
+            <li>图片图片图片</li>
+            <li>联系方式联系方式</li>
+            <li>问题反馈问题反馈问题反馈</li>
+        </ul>
+    </div>
+    <script>
+        $(".title li").on("mouseover", function() {
+            $(this).addClass("display").siblings().removeClass("display");
+            $(".content li").eq($(this).index()).addClass("display").siblings().removeClass("display");
+        });
+    </script>
+    <div class="box2">
+
+    </div>
+    <p id="p1">i here</p>
+</body>
+
+</html>
