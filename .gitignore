@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# chrome 调试生成temp文件
+.vscode/chrome
