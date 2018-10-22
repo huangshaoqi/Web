@@ -12,6 +12,16 @@
             "sourceMaps": true,
             "webRoot": "${workspaceFolder}",
             "userDataDir": "${workspaceRoot}/.vscode/chrome"
+        },
+        {
+            "name": "Launch Firefox",
+            "type": "firefox",
+            "request": "launch",
+            "url": "file:///${file}",
+            "sourceMaps": "client",
+            "reAttach": false,
+            "webRoot": "${workspaceFolder}",
         }
     ]
+            
 }
