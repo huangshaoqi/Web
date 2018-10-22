@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+	<select name="" >
+		<option value="">--请选择省--</option>
+	</select>
+	<select name="" >
+		<option value="">--请选择市--</option>
+	</select>
+	<select name="" >
+		<option value="">--请选择县/区--</option>
+	</select>
+	<script>
+		// 省和市
+		var ss = {
+			'河北':['石家庄','廊坊','邯郸'],
+			'河南':['郑州','周口'],
+			'辽宁':['沈阳','大连','海城'],
+			'湖北':['武汉','襄阳','荆州'],
+		};
+		// 市和县区的关系
+		var sx = {
+			'石家庄':['石家庄东','石家庄西','石家庄南','正定'],
+			'廊坊':['霸州','燕郊','香河'],
+			'邯郸':['魏县','涉县','永年'],
+			'郑州':['金水','七里河','新郑'],
+			'周口':['西华','沈丘','鹿邑','项城'],
+			'沈阳':['和平区','铁西'],
+			'大连':['中山区','沙河口'],
+			'海城':['高新开发区','新区','老城区'],
+			'武汉':['江汉区','硚口','洪山区'],
+			'襄阳':['郭靖','黄蓉','杨过'],
+			'荆州':['刘备','关羽','小乔']
+		};
+		// 省  遍历数据
+		var str = '<option value="">--请选择省--</option>';
+		for(var i in ss){
+			str+='<option value="'+i+'">--'+i+'--</option>';
+		}
+		console.log(str);
+		// 将拼接好的字符串写入省
+		$('select').eq(0).html(str);
+
+		// 给省添加change事件 获取当前用户选择的那个省 根据省去找市
+		$('select').eq(0).change(function(){
+			var str1 = '<option value="">--请选择市--</option>';
+			// 获取当前选中的vale值
+			var p = $(this).val();
+			// 根据拿到的键 取对应的值
+			for(var i in ss[p]){
+				str1+='<option value="'+ss[p][i]+'">--'+ss[p][i]+'--</option>';
+			}
+			console.log(str1);
+			// 将拼接好的字符写入到市
+			$('select').eq(1).html(str1);
+		})
+		// 给市添加change事件  根据选择的市 取找区县的数据
+		$('select').eq(1).change(function(){
+			var str2 = '<option value="">--请选择县/区--</option>'
+			// 当前选中的市那个市
+			var c = $(this).val();
+			// 根据拿到的value值去遍历区县数据
+			for(var i in sx[c]){
+				str2+='<option value="'+sx[c][i]+'">--'+sx[c][i]+'--</option>';
+			}
+			console.log(str2);
+			// 将拼接好的字符串写入到select 县区
+			$('select').eq(2).html(str2);
+		})
+	</script>
+</body>
+</html>

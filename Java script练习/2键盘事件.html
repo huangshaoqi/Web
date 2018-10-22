@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./jquery-1.8.3.min.js"></script>
+	<style>
+		.wrap{
+			width: 600px;
+			height: 600px;
+			border:1px solid red;
+			position: relative;
+		}
+		.inner{
+			width: 100px;
+			height: 100px;
+			background: green;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="inner"></div>
+	</div>
+	<script>
+		// 定义移动的值
+		var TB = 0;
+		var LR = 0;
+		$(window).keydown(function(e){
+			// 先获取上下左右键的建码  
+			// 上 38 下 40 左37 右39
+			var Key = e.keyCode; 
+			// 判断按下的是什么键
+			switch(Key){
+				case 38:
+					// 上
+					console.log('上');
+					TB-=5;
+					// 判断 TB 小于了最小移动距离 重新赋值为最小的移动距离
+					if(TB<=0){
+						TB=0;
+					}
+					$('.inner').css('top',TB+'px');
+					break;
+
+				case 40:
+					// 下
+					TB+=5;
+					// 获取最大移动距离 wrapH - innerH=maxH
+					var maxH = $('.wrap').height()-$('.inner').height();
+					// 判断是否查过最大移动距离 如果超过赋值为最大移动距离
+					if(TB>=maxH){
+						TB = maxH;
+					}
+					
+					$('.inner').css('top',TB+'px');
+					break;
+
+				case 37:
+					// 左
+					LR-=5;
+					// 判断是否小于最小移动距离
+					if(LR<=0){
+						LR = 0;
+					}
+					$('.inner').css('left',LR+'px');
+					break;
+				case 39:
+					// 右
+					LR+=5;
+					// 最大移动距离 wrapW - innerW =maxW
+					var maxW = $('.wrap').width()-$('.inner').width();
+					if(LR>=	maxW){
+						LR = maxW;
+					}
+					$('.inner').css('left',LR+'px');
+					break;
+			}
+		})
+	</script>
+</body>
+</html>
