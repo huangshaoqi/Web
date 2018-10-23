@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./../js/jquery-1.8.3.min.js"></script>
+	<style>
+		*{margin:0;padding:0;list-style: none}
+		.f1{
+			height: 900px;
+			background: red;
+		}
+		.f2{
+			height: 1000px;
+			background: yellow;
+		}
+		.f3{
+			height: 700px;
+			background: blue;
+		}
+		.f4{
+			height: 880px;
+			background: green;
+		}
+		.f5{
+			height: 700px;
+			background: pink;
+		}
+		.f6{
+			height: 880px;
+			background:#c4c4c4;
+		}
+
+		.nav{
+			height: 350px;
+			width:80px;
+			background:#fff;
+			position:fixed;
+			bottom:200px;
+			right:50px;
+			cursor:pointer;
+		}
+		.nav li,.top{
+			height:50px;
+			border:1px solid #c4c4c4;
+			text-align: center;
+			line-height: 50px;
+			box-sizing:border-box;
+		}
+		.nav li:hover{
+			background:red;
+		}
+		.nav .active{
+			background:#0f0;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="f1">1</div>
+	<div class="f2">2</div>
+	<div class="f3">3</div>
+	<div class="f4">4</div>
+	<div class="f5">5</div>
+	<div class="f6">6</div>
+	<div class="nav">
+		<ul>
+			<li class="active">1F</li>
+			<li>2F</li>
+			<li>3F</li>
+			<li>4F</li>
+			<li>5F</li>
+			<li>6F</li>
+		</ul>
+		<div class="top">返回顶部</div>
+	</div>
+	<script>
+		// 返回顶部
+		$('.top').click(function(){
+			$('html,body').animate({
+				scrollTop:'0',
+			},3000);
+		});
+
+		// 给每一个li添加单击事件
+		$('.nav ul li').click(function(){
+			var Ind = $(this).index()+1;
+			// 先获取当前楼层相对于文档的偏移位置
+			var Top = $('.f'+Ind).offset().top;
+			// 让文档滚动到指定楼层的位置
+			$('html,body').animate({
+				scrollTop:Top+'px',
+			},2000);
+		});
+		// 给文档添加滚动事件  时时获取文档的滚动位置
+		$(document).scroll(function(){
+			// 获取文档的偏移位置
+			var Dof = $(document).scrollTop();
+			var F1 = $('.f1').offset().top;
+			var F2 = $('.f2').offset().top;
+			var F3 = $('.f3').offset().top;
+			var F4 = $('.f4').offset().top;
+			var F5 = $('.f5').offset().top;
+			var F6 = $('.f6').offset().top;
+			// 当前文档的偏移位置和 楼层的偏移位置比较
+			if(Dof>=F1){
+				$('.nav li').eq(0).addClass('active').siblings().removeClass('active');
+			};
+			if(Dof>=F2){
+				$('.nav li').eq(1).addClass('active').siblings().removeClass('active');
+			};
+			if(Dof>=F3){
+				$('.nav li').eq(2).addClass('active').siblings().removeClass('active');
+			};
+			if(Dof>=F4){
+				$('.nav li').eq(3).addClass('active').siblings().removeClass('active');
+			};
+			if(Dof>=F5){
+				$('.nav li').eq(4).addClass('active').siblings().removeClass('active');
+			};
+			if(Dof>=F6){
+				$('.nav li').eq(5).addClass('active').siblings().removeClass('active');
+			};
+		})
+	</script>
+</body>
+</html>
