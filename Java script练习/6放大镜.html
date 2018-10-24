@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./jquery-1.8.3.min.js"></script>
+	<style>
+		*{margin:0;padding:0;}
+		.wrap{
+			position:relative;
+		}
+		.left{
+			width: 400px;
+			height: 400px;
+			border:1px solid red;
+		}
+		.right{
+			width: 400px;
+			height: 400px;
+			border:1px solid blue;
+			position:absolute;
+			top:0;
+			left:405px;
+			overflow: hidden;
+			display:none;
+		}
+		.right img{
+			position:absolute;
+		}
+		.move{
+			/*width: 160px;
+			height: 160px;*/
+			background:url('./images/bg.png');
+			position:absolute;
+			top:0;
+			left:0;
+			display:none;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="left">
+			<img src="./images/2.jpg" alt="" width="400px">
+			<div class="move"></div>
+		</div>
+		<div class="right">
+			<img src="./images/2.jpg" alt="">
+		</div>
+	</div>
+	<script>
+		// 鼠标移入 
+		$('.left').mouseover(function(){
+			// 显示 move right
+			$('.move').show();
+			$('.right').show();
+			// 计算蒙版大小 rignt宽高/大图的宽高*left宽高
+			var mW = $('.right').width()/$('.right img').width()*$('.left').width();
+			var mH = $('.right').height()/$('.right img').height()*$('.left').height();
+			$('.move').css({width:mW+'px',height:mH+'px'});
+			
+			// 添加移动事件 让move跟着鼠标跑
+			$('.left').mousemove(function(e){
+				// 获取鼠标的位置
+				var sX = e.clientX;
+				var sY = e.clientY;
+				var newX = sX - $('.move').width()/2;
+				var newY = sY - $('.move').height()/2;
+				// 判断边界
+				if(newX<=0){
+					newX=0;
+				}
+				// 求move的横向最大移动距离
+				var maxW = $('.left').width()-$('.move').width();
+				if(newX >= maxW){
+					newX = maxW;
+				}
+
+				// 判断垂直边界
+				if(newY <= 0){
+					newY=0
+				}
+				// 垂直方向最大移动距离
+				var maxH = $('.left').height()-$('.move').height();
+				if(newY >= maxH){
+					newY = maxH;
+				}
+				// 设置蒙版的移动
+				$('.move').css({top:newY+'px',left:newX+'px'});
+
+				// 获取大图的移动距离 小图移动距离*缩放倍数
+				var ImgX = newX*2.5;
+				var ImgY = newY*2.5;
+				// 设置大图的移动
+				$('.right img').css({top:-ImgY+'px',left:-ImgX+'px'});
+			})
+		})
+
+		// 移出事件
+		$('.left').mouseout(function(){
+			// 让move right 隐藏
+			$('.move').hide();
+			$('.right').hide();
+		})
+	</script>
+</body>
+</html>
