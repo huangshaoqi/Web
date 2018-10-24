@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Mircrosoft.XMLHTTP");
+            };
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById('data').innerHTML = xmlhttp.responseText;
+                };
+            };
+            xmlhttp.open("GET", "static/data.txt", true);
+            xmlhttp.send();
+
+            setTimeout(function () {
+                document.getElementById('data').innerHTML = Date();
+            }, 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="mydiv">
+        <h3>This is ajax data!</h3>
+        <button onclick="loadXMLDoc()">查看数据</button>
+        <h4 id="data"></h4>
+    </div>
+</body>
+
+</html>
