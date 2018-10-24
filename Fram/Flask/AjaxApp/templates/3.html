@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <button class="btn btn-info" onclick="loadXMLDoc()">获取信息</button>
+    <script src="static/js/my_ajax.js"></script>
+    <table class="table table-bordered table-hover table-striped text-center" style="width:600px;">
+        <caption>省-城市-区/县</caption>
+        <thead>
+            <tr class="text-center">
+                <th>省名</th>
+                <th>城市</th>
+                <th>区/县</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>湖北省</td>
+                <td>黄石市</td>
+                <td>大冶市</td>
+            </tr>
+        </tbody>
+    </table>
+    <span id="content">
+
+    </span>
+    <script src="static/js/jquery-1.11.3.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+</body>
+
+</html>
