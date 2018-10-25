@@ -1,0 +1,83 @@
+/* 设置导航栏全局样式 */
+.top-bar {
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    color: #b0b0b0;
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
+}
+/* 导航栏里左边列表里的分割字符"|" */
+.top-bar .sep {
+    margin: 0 .5em;
+    color: #424242;
+
+}
+/* 导航栏空间宽度和居中对齐 */
+.container {
+    width: 1226px;
+    margin: 0 auto;
+}
+/* 导航栏里的左边列表全局样式 */
+.top-nav {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+/* 导航栏里的左边列表里的每个a标签样式 */
+.top-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #b0b0b0;
+    cursor: pointer;
+}
+/* 鼠标放到a标签里的文字颜色为白色 */
+.top-nav a:hover {
+    color: white;
+}
+
+/* 导航栏列表中"下载app"弹出二维码效果 */
+/* 1.设置父元素为相对定位，为了给里面的.box设置绝对定位 */
+.download {
+    position: relative;
+}
+/* 2.包裹二维码的.box元素样式，默认为隐藏 */
+.download .box {
+    width: 124px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    padding: 18px 0px 14px;
+    background: rgb(255, 255, 255);
+    margin-left: -55px;
+    box-shadow: rgb(170, 170, 170) 0px 1px 5px;
+    display: none;
+}
+
+.download .box em {
+    width: 0;
+    height: 0;
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+    position: absolute;
+    top: -10px;
+    left: 50px;
+}
+
+.download .box img {
+    display: block;
+    margin: 0 auto;
+    width: 90;
+    height: 90;
+}
+
+.download .box span {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+    margin-top: 14px;
+}

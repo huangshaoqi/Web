@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,json
 
 app = Flask(__name__)
 
@@ -40,6 +40,7 @@ def get_data():
             print(row)
             data += "<tr><td>"+row[1]+"</td>" + "<td>" + \
                 str(row[2])+"</td>" + "<td>"+str(row[3])+"</td></tr>"
+
         print(data)
     except Exception as e:
         print(e)
@@ -48,7 +49,20 @@ def get_data():
     finally:
         cursor.close()
         db.close()
+    # return data
     return data
+
+@app.route('/get_info')
+def get_info():
+    return render_template('4.html')
+
+@app.route('/get_mod')
+def get_mod():
+    info = {}
+    data = request.values
+    for k,v in data.items():
+        info[k] = v
+    return json.dumps(info)
 
 
 if __name__ == '__main__':

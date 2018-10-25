@@ -8,9 +8,10 @@ function loadXMLDoc() {
         //支持旧时IE5，IE6浏览器
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     };
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             // document.getElementById('content').innerText = xmlhttp.responseText;
+
             console.log(xmlhttp.responseText);
             //清空table里的数据
             $('tbody').empty();

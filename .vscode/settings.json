@@ -1,2 +1,19 @@
 {
+    //为了符合eslint的两个空格间隔原则
+    "editor.tabSize": 4,
+    //使用eslint规则重新格式化代码
+    "eslint.autoFixOnSave": true,
+    //关闭自动文件自动存储
+    "files.autoSave": "off",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "jsx",
+        "vue",
+        {
+            "language": "html",
+            "autoFix": true
+        }
+    ],
 }

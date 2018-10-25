@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border: 1px solid blue;
+            position: relative;
+        }
+
+        .box span em {
+            width: 0;
+            height: 0;
+            border-width: 0 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent rgb(226, 14, 14);
+            position: absolute;
+            top: -10px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>
+            <em></em>
+        </span>
+
+    </div>
+</body>
+
+</html>
