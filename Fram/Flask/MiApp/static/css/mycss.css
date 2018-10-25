@@ -1,4 +1,5 @@
 /* 设置导航栏全局样式 */
+
 .top-bar {
     width: 100%;
     height: 40px;
@@ -8,41 +9,62 @@
     position: relative;
     z-index: 1;
 }
+
+
 /* 导航栏里左边列表里的分割字符"|" */
+
 .top-bar .sep {
     margin: 0 .5em;
     color: #424242;
-
 }
+
+
 /* 导航栏空间宽度和居中对齐 */
+
 .container {
     width: 1226px;
     margin: 0 auto;
 }
+
+
 /* 导航栏里的左边列表全局样式 */
+
 .top-nav {
     float: left;
     height: 40px;
     line-height: 40px;
 }
+
+
 /* 导航栏里的左边列表里的每个a标签样式 */
+
 .top-nav a {
     display: inline-block;
     text-decoration: none;
     color: #b0b0b0;
     cursor: pointer;
 }
+
+
 /* 鼠标放到a标签里的文字颜色为白色 */
-.top-nav a:hover {
+
+.color-white a:hover {
     color: white;
 }
 
+
 /* 导航栏列表中"下载app"弹出二维码效果 */
+
+
 /* 1.设置父元素为相对定位，为了给里面的.box设置绝对定位 */
+
 .download {
     position: relative;
 }
+
+
 /* 2.包裹二维码的.box元素样式，默认为隐藏 */
+
 .download .box {
     width: 124px;
     position: absolute;
@@ -55,6 +77,9 @@
     display: none;
 }
 
+
+/* 二维码上方的小三角图形 */
+
 .download .box em {
     width: 0;
     height: 0;
@@ -66,12 +91,18 @@
     left: 50px;
 }
 
+
+/* 设置二维码显示大小和居中对齐 */
+
 .download .box img {
     display: block;
     margin: 0 auto;
     width: 90;
     height: 90;
 }
+
+
+/* 设置二维码下方的"小米商城APP"样式 */
 
 .download .box span {
     display: block;
@@ -80,4 +111,81 @@
     color: #333;
     line-height: 1;
     margin-top: 14px;
+}
+
+
+/* ###################################################### */
+
+
+/* ###################################################### */
+
+
+/* 设置导航栏右边购物车 */
+
+
+/* 购物车整体靠右边 */
+
+.top-cart {
+    width: 120px;
+    margin-left: 15px;
+    float: right;
+}
+
+
+/* 设置"购物车"样式 */
+
+.cart,
+.cart:visited {
+    position: relative;
+    text-decoration: none;
+    z-index: 32;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #b0b0b0;
+    background: #424242;
+    cursor: pointer;
+}
+
+
+/* 鼠标在"购物车上面的样式" */
+
+.cart:hover {
+    color: #ff6700;
+    background: #fff;
+    text-decoration: none;
+    outline: 0;
+}
+
+
+/* 购物车弹出的清单小框样式 */
+
+.cart-menu {
+    z-index: 31;
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 316px;
+    padding: 15px 0 0;
+    color: #424242;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.loading {
+    margin: 5px 20px 20px;
+    text-align: center;
+    padding: 20 0 0;
+}
+
+.loader {
+    position: relative;
+    margin: 0 auto;
+    width: 4px;
+    height: 20px;
+    /* background: #ff6700; */
+    overflow: visible;
+    transform: scale(1, 1);
 }

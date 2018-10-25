@@ -9,7 +9,7 @@
     <meta name="description" content="小米商城直营小米公司旗下所有产品，囊括小米手机系列小米MIX 3、小米8、小米Note 3，红米手机系列红米5 Plus、红米6 Pro，智能硬件，配件及小米生活周边，同时提供小米客户服务及售后支持。">
     <meta name="keywords" content="小米,小米8,小米Note3,红米5Plus,小米MIX3,小米商城">
     <meta name="viewport" content="width=1226">
-    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <script src="static/js/jquery-1.11.3.js"></script>
@@ -25,7 +25,7 @@
     <div class="top-bar">
         <div class="container">
             <!-- 导航栏里的左边横向列表 -->
-            <div class="top-nav">
+            <div class="top-nav color-white">
                 <a>小米商城</a>
                 <span class="sep">|</span>
                 <a>MIUI</a>
@@ -43,7 +43,9 @@
                 <a>政企服务</a>
                 <span class="sep">|</span>
                 <a class="download">下载app
+                    <!-- 下载二维码,默认隐藏 -->
                     <span class="box">
+                        <!--小三角图像 -->
                         <em></em>
                         <img src="../static/images/download.png" width="90" height="90" alt="小米商城">
                         <span>小米商城APP</span>
@@ -54,7 +56,20 @@
                 <a>Select Region</a>
             </div>
             <!-- 导航栏里的购物车 -->
-            <div class="top-cart"></div>
+            <div class="top-cart">
+                <a href="#" class="cart">
+                    <!-- 购物车图标 -->
+                    <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> 购物车
+                    <!-- 购物车物品数量 -->
+                    <span class="">(0)</span>
+                </a>
+                <!-- 显示购物车商品列表 -->
+                <div class="cart-menu">
+                    <div class="loading">
+                        <div class="loader">购物车中还没有商品，赶紧选购吧！</div>
+                    </div>
+                </div>
+            </div>
             <!-- 导航栏里的登陆、注册、消息通知 -->
             <div class="login-info"></div>
         </div>
