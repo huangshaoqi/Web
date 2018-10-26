@@ -13,8 +13,8 @@
 
 /* 导航栏里左边列表里的分割字符"|" */
 
-.top-bar .sep {
-    margin: 0 .5em;
+.sep {
+    margin: 0 .3em;
     color: #424242;
 }
 
@@ -65,7 +65,7 @@
 
 /* 2.包裹二维码的.box元素样式，默认为隐藏 */
 
-.download .box {
+.box {
     width: 124px;
     position: absolute;
     top: 40px;
@@ -75,12 +75,13 @@
     margin-left: -55px;
     box-shadow: rgb(170, 170, 170) 0px 1px 5px;
     display: none;
+    z-index: 10;
 }
 
 
 /* 二维码上方的小三角图形 */
 
-.download .box em {
+.box em {
     width: 0;
     height: 0;
     border-width: 0 10px 10px;
@@ -94,7 +95,7 @@
 
 /* 设置二维码显示大小和居中对齐 */
 
-.download .box img {
+.box img {
     display: block;
     margin: 0 auto;
     width: 90;
@@ -104,7 +105,7 @@
 
 /* 设置二维码下方的"小米商城APP"样式 */
 
-.download .box span {
+.box span {
     display: block;
     text-align: center;
     font-size: 14px;
@@ -129,13 +130,14 @@
     width: 120px;
     margin-left: 15px;
     float: right;
+    position: relative;
+    z-index: 10;
 }
 
 
 /* 设置"购物车"样式 */
 
-.cart,
-.cart:visited {
+.cart {
     position: relative;
     text-decoration: none;
     z-index: 32;
@@ -151,7 +153,7 @@
 
 /* 鼠标在"购物车上面的样式" */
 
-.cart:hover {
+.top-cart:hover {
     color: #ff6700;
     background: #fff;
     text-decoration: none;
@@ -163,12 +165,13 @@
 
 .cart-menu {
     z-index: 31;
-    display: block;
+    display: none;
     position: absolute;
     top: 40px;
     right: 0;
     width: 316px;
-    padding: 15px 0 0;
+    height: 100px;
+    /* padding: 15px 0 0; */
     color: #424242;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
@@ -177,15 +180,180 @@
 .loading {
     margin: 5px 20px 20px;
     text-align: center;
-    padding: 20 0 0;
+    line-height: 100px;
+    /* padding: 20 0 0; */
+    /* height: 100px; */
 }
 
 .loader {
     position: relative;
     margin: 0 auto;
-    width: 4px;
+    /* width: 4px; */
     height: 20px;
-    /* background: #ff6700; */
     overflow: visible;
     transform: scale(1, 1);
+}
+
+/* 导航栏中的登陆区 */
+.login-info {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.login-info a {
+    display: inline-block;
+    text-decoration: none;
+    color: #b0b0b0;
+    cursor: pointer;
+}
+
+/* 第二排头部导航 */
+
+/* 小米logo */
+.mi-logo {
+    margin-top: 22px;
+    float: left;
+    width: 62px;
+}
+
+.mi-logo a {
+    display: block;
+    width: 55px;
+    height: 55px;
+    text-align: left;
+    text-decoration: none;
+    background-color: #ff6700;
+}
+
+/* 第二排头部导航栏 */
+.header-ul {
+    list-style-type: none;
+    height: 100px;
+    width: 820px;
+    margin: 0;
+    padding: 12px 0 0 140px;
+    position: relative;
+    float: left;
+}
+
+.header-ul li {
+    display: block;
+    float: left;
+    line-height: 88px;
+    padding-right: 9px;
+}
+
+.header-ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 26px 5px 38px;
+}
+
+/* 导航栏搜索框 */
+.header-search {
+    float: right;
+    width: 296px;
+    margin-top: 25px;
+}
+
+/* 搜索框表单 */
+.search-form {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    margin: 0;
+}
+
+/* 搜索框文本区域 */
+.search-text {
+    position: absolute;
+    top: 0;
+    right: 51px;
+    z-index: 1;
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 48px;
+    outline: 0;
+}
+
+/* 搜索提交图标 */
+.search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 52px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    font-size: 24px;
+    line-height: 24px;
+    background: #fff;
+    color: #616161;
+    outline: 0;
+    z-index: 20;
+}
+
+/* 默认出现的搜索关键字 */
+.search-keyword {
+    position: absolute;
+    top: 14px;
+    right: 62px;
+    z-index: 2;
+    text-align: right;
+}
+
+.search-keyword a {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575;
+    text-decoration: none;
+}
+
+.search-keyword a:hover {
+    color: white;
+    background-color: #ff6700;
+}
+
+/* 关键字列表 */
+.keyword-list {
+    position: absolute;
+    /* left: 0; */
+    right:51px;
+    top: 48px;
+    width: 223px;
+    border: 1px solid #ff6700;
+    border-top: 0;
+    background: #fff;
+    display: none;
+}
+
+.keyword-list ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.keyword-list ul li a {
+    position: relative;
+    display: block;
+    padding: 6px 15px;
+    font-size: 12px;
+    color: #424242;
+}
+.result{
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.list-group-item{
+    border: none;
 }
