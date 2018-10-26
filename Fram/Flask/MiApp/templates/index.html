@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <script src="static/js/jquery-1.11.3.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <!-- 自定义CSS样式 -->
     <link rel="stylesheet" href="static/css/mycss.css">
+    <!-- 自定义字体 -->
+    <link rel="stylesheet" type="text/css" href="static/fonts/my-font/iconfont.css">
 
 </head>
 
@@ -59,7 +62,7 @@
                 <div class="top-cart">
                     <a class="cart">
                         <!-- 购物车图标 -->
-                        <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> 购物车
+                        <i class="iconfont icon-gouwuchekong" aria-hidden="true"></i> 购物车
                         <!-- 购物车物品数量 -->
                         <span class="">(0)</span>
                     </a>
@@ -112,7 +115,8 @@
                         <form action="" class="search-form">
                             <label for="search"></label>
                             <input type="text" class="search-text" id="search">
-                            <input type="submit" class="glyphicon glyphicon-search search-btn" value="">
+                            <button type="submit" class="iconfont icon-xiazai15 search-btn"></button>
+                            <!-- <input type="submit" class="iconfont icon-xiazai15 search-btn"> -->
                             <div class="search-keyword">
                                 <a href="#">小米8</a>
                                 <a href="#">小米MIX2S</a>
@@ -187,7 +191,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- 主页轮播图 -->
         <div class="container">
             <div class="row content1"></div>
         </div>
@@ -196,6 +200,33 @@
             <div class="row footer"></div>
         </div>
 
+    </div>
+    <!-- 主页侧边栏 -->
+    <div class="right-top">
+        <div class="right-bar fixed-bar_b">
+            <ul>
+                <li class="shouji_app">
+                    <i class="iconfont icon-shouji-tianchong"></i>
+                    <a>手机APP</a>
+                    <div class="right-bar-saoma">
+                        <img src="static/images/saoyisao.png" style="width: 100px" class="right-bar-img">
+                        <p>手机扫一扫一分赢好礼</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="iconfont icon-icon"></i>
+                    <a>个人中心</a>
+                </li>
+                <li>
+                    <i class="iconfont icon-kefu"></i>
+                    <a>联系客服</a>
+                </li>
+                <li>
+                    <i class="iconfont icon-gouwuche"></i>
+                    <a>购物车</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
 

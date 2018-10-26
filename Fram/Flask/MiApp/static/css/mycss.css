@@ -131,7 +131,7 @@
     margin-left: 15px;
     float: right;
     position: relative;
-    z-index: 10;
+    z-index: 30;
 }
 
 
@@ -194,7 +194,9 @@
     transform: scale(1, 1);
 }
 
+
 /* 导航栏中的登陆区 */
+
 .login-info {
     float: right;
     height: 40px;
@@ -208,9 +210,12 @@
     cursor: pointer;
 }
 
+
 /* 第二排头部导航 */
 
+
 /* 小米logo */
+
 .mi-logo {
     margin-top: 22px;
     float: left;
@@ -226,7 +231,9 @@
     background-color: #ff6700;
 }
 
+
 /* 第二排头部导航栏 */
+
 .header-ul {
     list-style-type: none;
     height: 100px;
@@ -251,14 +258,18 @@
     padding: 26px 5px 38px;
 }
 
+
 /* 导航栏搜索框 */
+
 .header-search {
     float: right;
     width: 296px;
     margin-top: 25px;
 }
 
+
 /* 搜索框表单 */
+
 .search-form {
     width: 100%;
     height: 50px;
@@ -266,7 +277,9 @@
     margin: 0;
 }
 
+
 /* 搜索框文本区域 */
+
 .search-text {
     position: absolute;
     top: 0;
@@ -281,7 +294,9 @@
     outline: 0;
 }
 
+
 /* 搜索提交图标 */
+
 .search-btn {
     position: absolute;
     right: 0;
@@ -294,10 +309,18 @@
     background: #fff;
     color: #616161;
     outline: 0;
-    z-index: 20;
+    z-index: 21;
 }
 
+.search-btn:hover {
+    border: 1px solid #ff6700;
+    background-color: #ff6700;
+    color: white;
+}
+
+
 /* 默认出现的搜索关键字 */
+
 .search-keyword {
     position: absolute;
     top: 14px;
@@ -321,11 +344,13 @@
     background-color: #ff6700;
 }
 
+
 /* 关键字列表 */
+
 .keyword-list {
     position: absolute;
     /* left: 0; */
-    right:51px;
+    right: 51px;
     top: 48px;
     width: 223px;
     border: 1px solid #ff6700;
@@ -347,13 +372,108 @@
     font-size: 12px;
     color: #424242;
 }
-.result{
+
+
+/* 搜索框下方的关键字列表样式 */
+
+.result {
     position: absolute;
     right: 15px;
     top: 6px;
     color: #b0b0b0;
     font-size: 12px;
 }
-.list-group-item{
+
+
+/* 去掉bootstrap自带的边框效果 */
+
+.list-group-item {
     border: none;
+}
+
+
+/* ############################### */
+
+
+/* 主页侧边栏 */
+
+.right-bar {
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+}
+
+.fixed-bar_b {
+    bottom: 20%;
+}
+
+.fixed-bar_t {
+    top: 40px;
+}
+
+.right-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #f5f5f5;
+}
+
+.right-bar ul li {
+    position: relative;
+    display: block;
+    width: 82px;
+    height: 90px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    border-top: none;
+}
+
+.right-bar ul li i {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding-top: 20px;
+    margin: 0 0 0 27px;
+    font-size: 30px;
+    color: #757575;
+}
+
+.right-bar ul li a {
+    display: block;
+    color: #757575;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 35px;
+}
+
+
+/* 侧边栏弹出二维码 */
+
+.right-bar-saoma {
+    position: absolute;
+    top: 0;
+    height: 187px;
+    left: -137px;
+    border: 1px solid #f5f5f5;
+    color: #757575;
+    background-color: white;
+    display: none;
+}
+
+.right-bar-saoma img {
+    width: 100px;
+    height: 100px;
+    margin: 20px 14px;
+    background: #fff;
+    border: 0;
+}
+
+.right-bar-saoma p {
+    width: 83px;
+    margin: -10px auto 0;
+    color: #757575;
+    font-size: 14px;
+    text-align: center;
 }
