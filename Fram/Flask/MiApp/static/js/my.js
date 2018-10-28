@@ -129,3 +129,37 @@ $('.right-bar ul li').mouseover(function() {
         $('.right-bar-saoma').hide();
     }
 })
+
+$(function() {
+    // 菜单栏背景颜色随机变化
+    $('#carousel-example-generic').on('slide.bs.carousel', function() {
+        var value1 = Math.floor(Math.random() * 30 + 10);
+        var value2 = Math.floor(Math.random() * 30 + 10);
+        var value3 = Math.floor(Math.random() * 30 + 10);
+        $('.menu').css('background', 'rgba(' + value1 + ', ' + value2 + ', +' + value3 + ', .4)');
+    });
+
+    // 分类栏弹出详情
+    $('.menu ul li').mouseover(function() {
+        // 获取li的class属性值
+        var num_info = $(this).attr('class');
+        // console.log(num_info);
+        $('.' + num_info + '-info').css('display', 'block');
+    }).mouseout(function() {
+        var num_info = $(this).attr('class');
+        $('.' + num_info + '-info').mouseover(function() {
+            $('.' + num_info + '-info').css('display', 'block');
+        }).mouseout(function() {
+            $('.' + num_info + '-info').css('display', 'none');
+        });
+        $('.' + num_info + '-info').css('display', 'none');
+    });
+
+    // 
+    $('.tuijian-goods ul li').eq(0).css('margin-right', '12px');
+    $('.tuijian-goods ul li').eq(1).css('margin-right', '12px');
+    $('.tuijian-goods ul li').eq(2).css('float', 'right');
+
+    // 
+    // $('.header .da-xiao i').eq(1).css('border-right', '1px solid #c0c0c0');
+});
