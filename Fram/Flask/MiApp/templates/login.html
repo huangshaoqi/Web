@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米账号 - 登陆</title>
+    <meta name="description" content="小米商城直营小米公司旗下所有产品，囊括小米手机系列小米MIX 3、小米8、小米Note 3，红米手机系列红米5 Plus、红米6 Pro，智能硬件，配件及小米生活周边，同时提供小米客户服务及售后支持。">
+    <meta name="keywords" content="小米,小米8,小米Note3,红米5Plus,小米MIX3,小米商城">
+    <meta name="viewport" content="width=1226">
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/jquery-1.11.3.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <!-- 自定义CSS样式 -->
+    <link rel="stylesheet" href="static/css/mycss.css">
+    <!-- 自定义字体 -->
+    <link rel="stylesheet" type="text/css" href="static/fonts/my-font/iconfont.css">
+    <style>
+        .copyright-content {
+            width: 400px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        
+        .footer-content div div span {
+            color: #333;
+            font-size: 14px;
+            padding-right: 6px;
+            padding-left: 6px;
+        }
+        
+        .shurukuang {
+            cursor: default;
+        }
+        
+        .shurukuang-header {
+            height: 82px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .shurukuang-header span {
+            display: inline-block;
+            line-height: 82px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .shurukuang-header span:hover {
+            color: #ff6700;
+            cursor: pointer;
+        }
+        
+        .shurukuang div .form-group div input {
+            width: 348px;
+            height: 50px;
+        }
+        
+        .form-help span:hover {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bg-login" style="background-color:white">
+        <!-- 登陆logo -->
+        <div class="container" style="width: 1226px;margin: 0 auto;">
+            <div class="row" style="background:url(static/images/mistore_logo.png) no-repeat;width: 200px;height: 98px;margin-left: 30px;">
+            </div>
+        </div>
+        <!-- 中间登陆内容区 -->
+        <div style="background:url(static/images/login-bg.jpg) no-repeat;width:100%;height:588px;position: absolute;left:0;top:98px;background-repeat:no-repeat;background-position:top center;">
+            <!-- 登陆框 -->
+            <div class="container" style="width: 1226px;margin: 0 auto;">
+                <div class="row login-content">
+                    <div style="height:524px;width: 410px;background: white;margin-left: 770px;margin-top: 30px;cursor: pointer;">
+                        <div style="width:410px;height:82px;position: relative;">
+                            <!-- 账号登陆  扫码登陆 -->
+                            <div style="font-size:24px;color:#666;" class="shurukuang-header">
+                                <span style="color:#ff6700">账号登陆</span>
+                                <i>|</i>
+                                <span>扫码登陆</span>
+                            </div>
+                            <!-- 输入框 -->
+                            <div class="shurukuang" style="padding-left:30px;padding-right:30px;padding-top:20px;cursor: default;z-index: 100">
+                                <div class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <!-- <label for="username" class="col-sm-2 control-label sr-only">用户名:</label> -->
+                                        <div class="col-sm-12">
+                                            <input type="text" class="form-control" id="username" placeholder="邮箱/手机号码/小米ID:admin">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="password" class="col-sm-2 control-label sr-only">密码:</label> -->
+                                        <div class="col-sm-12">
+                                            <input type="password" class="form-control" id="password" placeholder="密码:123456">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <button id="button" type="button" class="btn btn-default" style="width:348px;height:50px;background-color: #ff6700;margin-top:20px;">登录</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-help">
+                                    <!-- 手机短信登录/注册   立即注册| 忘记密码？ -->
+                                    <span style="color:#ff6700;display: block;float: left;">手机短信登录/注册</span>
+                                    <span style="text-align:right;display: block;float: right;color:#999;">忘记密码？</span>
+                                    <i style="text-align:right;display: block;float: right;color:#999;">&nbsp;|&nbsp;</i>
+                                    <span style="text-align:right;display: block;float: right;color: #999;">立即注册</span>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row footer-content">
+                    <!--footer copyright -->
+                    <!-- 简体| 繁体| English| 常见问题| 隐私政策 -->
+                    <div style="width: 1226px;height: 80px;margin: 0 auto;position: relative;cursor: default!important;z-index: 100;">
+                        <div class="copyright-content">
+                            <span>简体</span>
+                            <span>|</span>
+                            <span>繁体</span>
+                            <span>|</span>
+                            <span>English</span>
+                            <span>|</span>
+                            <span>常见问题</span>
+                            <span>|</span>
+                            <span>隐私政策</span>
+                            <!-- <p>小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</p> -->
+                        </div>
+                        <!-- 小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号 -->
+                        <div style="margin: 0 auto;">
+                            <p style="text-align:center;margin-top:20px;">
+                                小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script>
+        $('.shurukuang-header span').click(function() {
+            $(this).css('color', '#ff6700').siblings().css('color', '#666');
+        });
+
+        $("#button").click(function() {
+            // console.log($(this));
+            // console.log($('#username').val());
+            // console.log($('#password').val());
+            $.ajax({
+                url: '/check',
+                type: 'GET',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val()
+                },
+                success: function(result) {
+                    if (result == "1") {
+                        alert("登陆成功!");
+                    };
+                    if (result == "0") {
+                        alert("登陆失败！用户名或密码错误");
+                    };
+                },
+                error: function() {
+                    console.log("兄die，马房里等会儿，有内部错误呀。。");
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
