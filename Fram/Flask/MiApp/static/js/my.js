@@ -162,4 +162,9 @@ $(function() {
 
     // 
     // $('.header .da-xiao i').eq(1).css('border-right', '1px solid #c0c0c0');
+
+
+    // xiaomi-footer
+    $('.xiaomi-footer div p span').first().css('border', 'none');
+    $('.xiaomi-help ul li').last().css('border-right', 'none');
 });
