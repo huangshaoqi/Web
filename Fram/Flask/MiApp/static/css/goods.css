@@ -504,6 +504,7 @@
     /* background: rgba(0, 0, 0, .5); */
     position: relative;
     border: 1px solid #ff6700;
+    display: none;
 }
 
 .menu ul {
@@ -511,6 +512,7 @@
     height: 420px;
     margin: 0;
     padding: 20px 0;
+    /* overflow: hidden; */
 }
 
 .menu ul li {
@@ -521,6 +523,13 @@
     line-height: 42px;
     color: black;
     cursor: pointer;
+}
+
+.header-ul li:first-child{
+    color: black;
+}
+.header-ul li:first-child:hover{
+    color: black;
 }
 
 .menu ul li i {
@@ -874,7 +883,7 @@
     margin-right: -15px;
 }
 
-.row-title_left {
+.row-title-left {
     display: block;
     /* line-height: 58px; */
     font-size: 22px;
@@ -883,10 +892,10 @@
     color: #212121;
     float: left;
     cursor: pointer;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
-.row-title_right {
+.row-title-right {
     display: block;
     /* line-height: 58px; */
     font-size: 16px;
@@ -894,7 +903,7 @@
     color: #212121;
     float: right;
     cursor: pointer;
-    margin-top: 26px;
+    /* margin-top: 26px; */
 }
 
 .content2 {
@@ -924,7 +933,7 @@
     float: right;
     /* margin-right: 0; */
 }
-
+/* 
 .right-ul li {
     cursor: pointer;
     display: block;
@@ -935,7 +944,7 @@
     background-color: white;
     margin-bottom: 14px;
     position: relative;
-}
+} */
 
 .left-ul li {
     cursor: pointer;
@@ -1186,4 +1195,53 @@
     overflow: hidden;
     background:url('./../images/slogan2016.png') no-repeat center 0;
     ;
+}
+
+/* 购买商品详情 */
+.goods-title {
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    color:black;
+    box-sizing: border-box;
+    position: absolute;
+    margin-top:-940px;
+}
+.goods-title-center{
+    width: 1226px;
+    height: 60px;
+    /* background-color: #5f5750; */
+    margin: 0 auto;
+}
+
+.goods-title-content .row-title-left{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 60px;
+    color: #212121;
+    float: left;
+    height:60px;
+    width: auto;
+}
+
+.goods-title-content .row-title-right{
+    height: 60px;
+    float: right;
+}
+
+.right-ul{
+    list-style-type: none;
+    /* width: 300px; */
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.row-title-right .right-ul li {
+    display: block;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    /* width: 50px; */
+    padding-left: 10px;
 }

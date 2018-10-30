@@ -167,4 +167,14 @@ $(function() {
     // xiaomi-footer
     $('.xiaomi-footer div p span').first().css('border', 'none');
     $('.xiaomi-help ul li').last().css('border-right', 'none');
+    $('.header-ul li').first().mouseover(function(){
+        $('.menu').css('display','block');
+    }).mouseout(function(){
+        $('.menu').mouseover(function(){
+            $('.menu').css('display', 'block');
+        }).mouseout(function(){
+            $('.menu').css('display', 'none');
+        });
+        $('.menu').css('display', 'none');
+    });
 });
