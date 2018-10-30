@@ -132,7 +132,7 @@ $('.right-bar ul li').mouseover(function() {
 
 $(function() {
     // 菜单栏背景颜色随机变化
-    $('#carousel-example-generic').on('slide.bs.carousel', function() {
+    $('.lunbo-img').on('slide.bs.carousel', function() {
         var value1 = Math.floor(Math.random() * 30 + 10);
         var value2 = Math.floor(Math.random() * 30 + 10);
         var value3 = Math.floor(Math.random() * 30 + 10);
@@ -167,14 +167,87 @@ $(function() {
     // xiaomi-footer
     $('.xiaomi-footer div p span').first().css('border', 'none');
     $('.xiaomi-help ul li').last().css('border-right', 'none');
-    $('.header-ul li').first().mouseover(function(){
-        $('.menu').css('display','block');
-    }).mouseout(function(){
-        $('.menu').mouseover(function(){
-            $('.menu').css('display', 'block');
-        }).mouseout(function(){
+
+
+
+    $('.all-list,.menu').mouseover(function() {
+        $('.menu').css('display', 'block');
+    });
+
+    $('.all-list').mouseout(function() {
+        $('.menu').mouseout(function() {
             $('.menu').css('display', 'none');
         });
         $('.menu').css('display', 'none');
     });
 });
+
+
+// 停止轮播
+$(".goods-lunbo").click(function() {
+    $("#carousel-example-generic").carousel('pause');
+});
+
+
+// 放大镜功能：
+$(function() {
+    $('.sell-goods-img img').mouseover(function() {
+        // 显示右边大图
+        $('.sell-goods-right').show();
+        // 获取左边图的地址src,写入右边大图的div下的img src里
+        var img_path = $(this).attr('src');
+        console.log(img_path);
+        console.log($('.sell-goods-right img').attr('src'));
+        $('.sell-goods-right img').attr('src', img_path);
+        console.log($('.sell-goods-right img').attr('src'));
+        $(".mengban").show();
+        // 计算蒙版宽高
+        var sw = $(".sell-goods-right").width() / $(".sell-goods-right img").width() * $(".sell-goods-img img").width();
+        var sh = $(".sell-goods-right").height() / $(".sell-goods-right img").height() * $(".sell-goods-img img").height();
+
+
+        $(".mengban").css({ width: sw + 'px', height: sh + 'px' });
+        // 鼠标 移动事件
+        $(".sell-goods-img img").mousemove(function(e) {
+            // 计算 鼠标的位置
+            var mouW = e.pageX;
+            var mouH = e.pageY;
+            // 元素的偏移位置
+            var dof = $('.sell-goods-img img').offset(); // {top:,left:}
+            // 鼠标在左侧div里面移动的位置
+            var newX = mouW - dof.left;
+            var newY = mouH - dof.top;
+            // 得到 蒙版移动的位置
+            var mengW = newX - $(".mengban").width() / 2;
+            var mengH = newY - $(".mengban").height() / 2;
+            // 判断左边是否到边界
+            if (mengW < 0) {
+                mengW = 0;
+            }
+            // 横向最大移动距离
+            var maxW = $(".sell-goods-img img").width() - $('.mengban').width();
+            if (mengW >= maxW) {
+                mengW = maxW;
+            }
+            // 纵向最大移动距离
+            var maxH = $(".sell-goods-img img").height() - $('.mengban').height();
+            if (mengH >= maxH) {
+                mengH = maxH;
+            }
+            // 判断到底部是否到边界
+            if (mengH < 0) {
+                mengH = 0;
+            }
+            //  蒙版移动位置
+            $(".mengban").css({ top: mengH + 'px', left: mengW + 'px' })
+                // 右边图的位置
+            var right_img_w = mengW * 2;
+            var right_img_h = mengH * 2;
+            $(".sell-goods-right img").css({ top: -right_img_h + 'px', left: -right_img_w + 'px' });
+        })
+    });
+    $('.sell-goods-img img').mouseout(function() {
+        $(".sell-goods-right").hide();
+        $(".mengban").hide();
+    })
+})
