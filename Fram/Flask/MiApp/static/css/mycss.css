@@ -990,7 +990,7 @@
 
 .xiaomi-copyright {
     width: 1226px;
-    height: 182px;
+    height: 100px;
     /* background-color: #5f57; */
     margin: 0 auto;
     margin-top: 30px;
@@ -1036,7 +1036,7 @@
 .xiaomi-help {
     width: 100%;
     height: 192px;
-    text-align: left!important;
+    text-align: left !important;
 }
 
 .xiaomi-help ul {
@@ -1068,7 +1068,7 @@
 
 .xiaomi-help ul li dl dd {
     margin: 10px 0 0;
-    font-size: 12px!important;
+    font-size: 12px !important;
     color: #757575;
 }
 
@@ -1098,29 +1098,29 @@
     font-size: 12px;
     text-align: center;
     color: #616161;
-    line-height: 18px!important;
+    line-height: 18px !important;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
 .call-sevice {
-    margin: 0 auto!important;
-    display: block!important;
-    text-align: center!important;
-    width: 118px!important;
-    height: 28px!important;
-    font-size: 12px!important;
-    line-height: 28px!important;
-    border: 1px solid #ff6700!important;
-    background: #fff!important;
-    color: #ff6700!important;
+    margin: 0 auto !important;
+    display: block !important;
+    text-align: center !important;
+    width: 118px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+    line-height: 28px !important;
+    border: 1px solid #ff6700 !important;
+    background: #fff !important;
+    color: #ff6700 !important;
     box-sizing: border-box;
 }
 
 .call-sevice:hover {
-    color: white!important;
+    color: white !important;
     background: #ff6700 !important;
-    cursor: pointer!important;
+    cursor: pointer !important;
 }
 
 .xiaomi-logo {
@@ -1138,6 +1138,7 @@
 }
 
 .info-text p,
+.info-text p a,
 .info-text p:link {
     margin: 0;
     line-height: 18px;
@@ -1153,6 +1154,35 @@
     color: #ff6700;
 }
 
-.p1 {
+.p1 a {
     color: #757575
+}
+
+.footer-img div {
+    float: right;
+    height: 28px;
+    width: 450px;
+    margin: 4px 0 0
+}
+
+.footer-img div img{
+    display: block;
+    float: left;
+    height: 28px;
+    margin: 4px 0 0;
+    padding-left:5px;
+}
+
+.xiaomi-bottom{
+    margin: 0 auto;
+    width: 267px;
+    height: 19px;
+    display: block;
+    margin-bottom: 40px;
+    
+    text-align: left;
+    text-indent: -9999em;
+    overflow: hidden;
+    background:url('./../images/slogan2016.png') no-repeat center 0;
+    ;
 }
