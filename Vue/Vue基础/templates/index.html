@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- 文本渲染 -->
+    <div id="box">
+        {{message}}
+    </div>
+    <!-- 属性 -->
+    <div id="box1">
+        <span v-bind:title="message1">来来来来</span>
+    </div>
+    <!-- 条件判断 -->
+    <div id="box2">
+        <span v-if="seen">你可以看到我了</span>
+        <span v-else>我看不到了</span>
+    </div>
+    <!-- 循环 -->
+    <div id="box3">
+        <span v-for="(account, index) in accounts" :key="index">
+            {{index}} ===> 用户名: {{account.username}}<br>
+                      ================> 密码:{{account.password}}<br>
+        </span>
+    </div>
+    <!-- 处理用户输入 -->
+    <div id="box4">
+        <p>{{msg}}</p>
+        <button v-on:click="reverseMsg">逆转消息</button>
+    </div>
+
+    <!-- 表单输入与用户数据状态 双向绑定 -->
+    <div id="box5">
+        <p>{{str}}</p>
+        <input v-model="str" type="text">
+
+    </div>
+
+    <script>
+        // < !--文本渲染 -->
+        var app = new Vue({
+            el: "#box",
+            data: {
+                message: "Hello,Vue!"
+            },
+        });
+        // < !--属性 -->
+        var app1 = new Vue({
+            el: "#box1",
+            data: {
+                message1: "你来了呀 " + new Date().toLocaleString()
+            }
+        });
+        // < !--条件判断 -->
+        var app2 = new Vue({
+            el: "#box2",
+            data: {
+                seen: true
+            }
+        });
+        // < !--循环 -->
+        var app3 = new Vue({
+            el: "#box3",
+            data: {
+                accounts: [{
+                        username: "huang",
+                        password: "123456"
+                    },
+                    {
+                        username: "kiss",
+                        password: "123"
+                    },
+                    {
+                        username: "miss",
+                        password: "111"
+                    },
+                ]
+            }
+        });
+        // < !--处理用户输入 -->
+        var app4 = new Vue({
+            el:"#box4",
+            data:{
+                msg:"This is Vue js",
+            },
+            methods:{
+                reverseMsg:function(){
+                    this.msg = this.msg.split(' ').reverse().join(' ');
+
+                }
+            }
+        });
+
+        // < !--表单输入与用户数据状态 双向绑定-- >
+        var app5 = new Vue({
+            el:"#box5",
+            data:{
+                str:"",
+            },
+
+        })
+    </script>
+</body>
+
+</html>

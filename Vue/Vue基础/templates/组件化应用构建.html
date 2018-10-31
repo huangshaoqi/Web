@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <ol>
+            <todo-item v-for="item in foodlist" v-bind:todo="item" v-bind:key="item.id">
+            </todo-item>
+        </ol>
+
+        <ul>
+            <book-item v-for="item in booklist" v-bind:key="item.num" v-bind:book="item">
+
+            </book-item>
+        </ul>
+    </div>
+
+
+    <script>
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{todo.val}}</li>'
+        });
+
+        Vue.component('book-item', {
+            props: ['book'],
+            template: '<li>{{book.val}}</li>'
+        });
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                foodlist: [{
+                        id: 0,
+                        val: "蔬菜"
+                    },
+                    {
+                        id: 1,
+                        val: "水果"
+                    },
+                    {
+                        id: 2,
+                        val: "随便吃点啥"
+                    }
+                ],
+                booklist: [{
+                        num: 0,
+                        val: "python"
+                    },
+                    {
+                        num: 1,
+                        val: "javascript"
+                    },
+                    {
+                        num: 2,
+                        val: "php"
+                    },
+                    {
+                        num: 3,
+                        val: "Vue.js"
+                    }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
