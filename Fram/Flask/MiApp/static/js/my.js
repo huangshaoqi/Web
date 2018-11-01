@@ -1,19 +1,19 @@
 //导航栏里的下载app效果,二维码显示
-$('.download').mouseover(function () {
+$('.download').mouseover(function() {
     // console.log("a");
     //鼠标移进.download标签时显示
     $('.download .box').css("display", "block");
 });
-$('.download').mouseout(function () {
+$('.download').mouseout(function() {
     //鼠标移出.download标签时隐藏
     $('.download .box').css("display", "none");
     //鼠标移进.box时显示
-    $('.download .box').mouseover(function () {
+    $('.download .box').mouseover(function() {
         // console.log("b");
         $('.download .box').css("display", "block");
     });
     //鼠标移出.box时隐藏
-    $('.download .box').mouseout(function () {
+    $('.download .box').mouseout(function() {
         // console.log("c");
         $('.download .box').css("display", "none");
     });
@@ -21,7 +21,7 @@ $('.download').mouseout(function () {
 
 // #######################################################
 //导航栏里的购物车显示效果
-$('.top-cart').mouseover(function () {
+$('.top-cart').mouseover(function() {
     // console.log("a");
     //鼠标移进.cart标签时显示
     $('.cart').css({
@@ -34,8 +34,8 @@ $('.top-cart').mouseover(function () {
 
 });
 
-$('.top-cart').mouseout(function () {
-    $('.cart-menu').mouseover(function () {
+$('.top-cart').mouseout(function() {
+    $('.cart-menu').mouseover(function() {
         // 鼠标出.cart标签，同时移除.cart-menu标签时隐藏
         $('.cart').css({
             "color": "#ff6700",
@@ -53,24 +53,24 @@ $('.top-cart').mouseout(function () {
 
 // ###########################################
 // 第二排导航栏点击效果
-$('.header-ul li').mouseover(function () {
+$('.header-ul li').mouseover(function() {
     $(this).children('a').css({
         "color": "#ff6700",
         "outline": "0",
     });
-}).mouseout(function () {
+}).mouseout(function() {
     $(this).children('a').css({
         "color": "#333"
     });
 });
 // 第二排搜索框效果
-$('.search-text').focus(function () {
+$('.search-text').focus(function() {
     // console.log("聚焦");
     $('.search-keyword').fadeOut(200);
     $('.search-btn').css("border", "1px solid #ff6700");
     $('.search-text').css("border", "1px solid #ff6700");
     $('.keyword-list').css("display", "block");
-}).blur(function () {
+}).blur(function() {
     $('.search-keyword').fadeIn(200);
     $('.search-btn').css("border", "1px solid #e0e0e0");
     $('.search-text').css("border", "1px solid #e0e0e0");
@@ -78,7 +78,7 @@ $('.search-text').focus(function () {
 });
 
 // 浏览器窗口发生变化时,侧边栏与窗口顶部最小为40px
-$(window).resize(function () {
+$(window).resize(function() {
 
     var narbar_top = Number($('.top-bar').height());
 
@@ -113,26 +113,30 @@ $(window).resize(function () {
 });
 
 // 侧边栏二维码弹出效果
-$('.right-bar ul li').mouseover(function () {
+$('.right-bar ul li').mouseover(function() {
     $(this).children('i').css("color", "#ff6700");
     $(this).children('a').css("color", "#ff6700");
     if ($(this).index() == 0) {
         $('.right-bar-saoma').show();
     }
-}).mouseout(function () {
+}).mouseout(function() {
     $(this).children('i').css("color", "#757575");
     $(this).children('a').css("color", "#757575");
     if ($(this).index() == 0) {
-        $('.right-bar-saoma').mouseover(function () {
+        $('.right-bar-saoma').mouseover(function() {
             $('.right-bar-saoma').show();
         });
         $('.right-bar-saoma').hide();
     }
 })
 
-$(function () {
+$('.xiaomi3 img').click(function() {
+    window.location.href = '/goods';
+});
+
+$(function() {
     // 菜单栏背景颜色随机变化
-    $('.lunbo-img').on('slide.bs.carousel', function () {
+    $('.lunbo-img').on('slide.bs.carousel', function() {
         var value1 = Math.floor(Math.random() * 30 + 10);
         var value2 = Math.floor(Math.random() * 30 + 10);
         var value3 = Math.floor(Math.random() * 30 + 10);
@@ -140,16 +144,16 @@ $(function () {
     });
 
     // 分类栏弹出详情
-    $('.menu ul li').mouseover(function () {
+    $('.menu ul li').mouseover(function() {
         // 获取li的class属性值
         var num_info = $(this).attr('class');
         // console.log(num_info);
         $('.' + num_info + '-info').css('display', 'block');
-    }).mouseout(function () {
+    }).mouseout(function() {
         var num_info = $(this).attr('class');
-        $('.' + num_info + '-info').mouseover(function () {
+        $('.' + num_info + '-info').mouseover(function() {
             $('.' + num_info + '-info').css('display', 'block');
-        }).mouseout(function () {
+        }).mouseout(function() {
             $('.' + num_info + '-info').css('display', 'none');
         });
         $('.' + num_info + '-info').css('display', 'none');
@@ -170,12 +174,12 @@ $(function () {
 
 
 
-    $('.all-list,.menu').mouseover(function () {
+    $('.all-list,.menu').mouseover(function() {
         $('.menu').css('display', 'block');
     });
 
-    $('.all-list').mouseout(function () {
-        $('.menu').mouseout(function () {
+    $('.all-list').mouseout(function() {
+        $('.menu').mouseout(function() {
             $('.menu').css('display', 'none');
         });
         $('.menu').css('display', 'none');
@@ -183,7 +187,7 @@ $(function () {
 
 
     // 放大镜功能：
-    $('.sell-goods-img').mouseover(function (e) {
+    $('.sell-goods-img').mouseover(function(e) {
         console.log("鼠标在上面。。。");
         console.log(e.pageX, e.pageY);
         // 显示右边大图
@@ -206,7 +210,7 @@ $(function () {
             // marginTop:'-448px',
         });
         // 鼠标 移动事件
-        $(".sell-goods-img").mousemove(function (e) {
+        $(".sell-goods-img").mousemove(function(e) {
             // 计算 鼠标的位置
             var mouW = e.pageX;
             var mouH = e.pageY;
@@ -245,8 +249,8 @@ $(function () {
                 top: mengH + 'px',
                 left: mengW + 'px'
             })
-            console.log('上:'+$(".mengban").css('top'));
-            console.log('左:'+$(".mengban").css('left'));
+            console.log('上:' + $(".mengban").css('top'));
+            console.log('左:' + $(".mengban").css('left'));
             // 右边图的位置
             var right_img_w = mengW * 2;
             var right_img_h = mengH * 2;
@@ -255,17 +259,17 @@ $(function () {
             console.log('要移动右边图片了');
             console.log($(".sell-goods-right img").css('top'));
             console.log($(".sell-goods-right img").css('left'));
-            
+
             $(".sell-goods-right img").css({
                 top: -right_img_h + 'px',
-                left: -right_img_w  + 'px'
+                left: -right_img_w + 'px'
             });
             console.log('右边图片移动之后的:');
             console.log($(".sell-goods-right img").css('top'));
             console.log($(".sell-goods-right img").css('left'));
         });
     });
-    $('.sell-goods-img').mouseout(function () {
+    $('.sell-goods-img').mouseout(function() {
         $(".sell-goods-right").hide();
         $('.sell-goods-right img').attr('src', '');
         $(".mengban").hide();
@@ -273,12 +277,12 @@ $(function () {
 
 
     // 放大镜下选择图片
-    $('.img-index a').click(function(){
+    $('.img-index a').click(function() {
         $(this).children().css('border', '1px solid #ff6700');
         $(this).siblings().children().css('border', '1px solid #616161');
-         var img_src = $(this).children().attr('src');
-         // console.log(img_path);
-         // console.log($('.sell-goods-right img').attr('src'));
-         $('.sell-goods-img img').attr('src', img_src);
+        var img_src = $(this).children().attr('src');
+        // console.log(img_path);
+        // console.log($('.sell-goods-right img').attr('src'));
+        $('.sell-goods-img img').attr('src', img_src);
     });
 });
