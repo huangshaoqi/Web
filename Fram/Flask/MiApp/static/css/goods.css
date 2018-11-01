@@ -136,7 +136,7 @@
     margin-left: 15px;
     float: right;
     position: relative;
-    z-index: 30;
+    z-index: 9999;
 }
 
 
@@ -169,7 +169,7 @@
 /* 购物车弹出的清单小框样式 */
 
 .cart-menu {
-    z-index: 1;
+    z-index: 3000;
     display: none;
     position: absolute;
     top: 40px;
@@ -498,8 +498,6 @@
     /* background-color: cadetblue; */
 }
 
-
-
 .menu {
     width: 234px;
     height: 460px;
@@ -507,7 +505,7 @@
     position: relative;
     border: 1px solid #ff6700;
     display: none;
-    z-index: 2;
+    z-index: 2000;
     background-color: white;
     opacity: 1;
 }
@@ -584,9 +582,6 @@
     width: 40px;
     height: 40px;
 }
-
-
-
 
 .row-title-left {
     display: block;
@@ -907,8 +902,6 @@
     float: left;
     width: 448px;
     height: 448px;
-
-
 }
 
 .sell-goods-img {
@@ -917,7 +910,6 @@
     margin: 0;
     padding: 0;
     position: relative;
-
 }
 
 .sell-goods-left img {
@@ -1007,7 +999,6 @@
     background-color: #ff6700;
     color: white;
     font-size: 14px;
-
 }
 
 .goods-price .list1 span {
@@ -1065,7 +1056,6 @@
     line-height: 44px;
     margin-bottom: 10px;
     text-indent: 10px;
-
 }
 
 .peizhi div span {
@@ -1125,13 +1115,12 @@
     color: #b0b0b0 !important;
     cursor: default !important;
     border-radius: 0px;
-    margin-top:30px;
+    margin-top: 30px;
     position: relative;
-    
 }
 
-.sell-btn p{
+.sell-btn p {
     display: block;
     line-height: 30px;
-    margin-top:0;
+    margin-top: 0;
 }
