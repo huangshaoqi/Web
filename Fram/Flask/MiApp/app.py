@@ -15,6 +15,11 @@ def login():
 def goods():
     return render_template('goods.html')
 
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
 @app.route('/check',methods=['GET'])
 def check():
     # 数据库里的账户信息
